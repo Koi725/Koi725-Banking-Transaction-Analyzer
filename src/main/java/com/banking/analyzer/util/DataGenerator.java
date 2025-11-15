@@ -11,21 +11,20 @@ import java.util.UUID;
 
 /**
  * Utility class for generating sample data for testing and demonstration.
- * Follows utility class best practices with private constructor.
  */
 public final class DataGenerator {
     
     private static final Random RANDOM = new Random();
     private static final String[] ACCOUNT_HOLDERS = {
-        "João Silva", "Maria Santos", "Pedro Costa", "Ana Oliveira",
-        "Carlos Pereira", "Sofia Rodrigues", "Miguel Alves", "Rita Fernandes"
+        "João Silva", "Cristiano Ronaldo", "Pedro Costa", "Bernardo slva",
+        "Professor Rui ", "Sofia Rodrigues", "Miguel Alves", "Rita Fernandes"
     };
     private static final String[] MERCHANTS = {
         "SuperMarket Central", "Tech Store", "Coffee Shop", "Restaurant Bella",
         "Gas Station", "Online Marketplace", "Pharmacy Plus", "Book Store"
     };
     private static final String[] CATEGORIES = {
-        "Groceries", "Electronics", "Food & Dining", "Transportation",
+        "Groceries", "Eletronics", "Food & Dining", "Tranportation",
         "Healthcare", "Shopping", "Entertainment", "Utilities"
     };
     
@@ -80,8 +79,6 @@ public final class DataGenerator {
     }
     
     /**
-     * Generates a suspicious transaction for fraud detection testing.
-     *
      * @param accountId the account ID
      * @return a suspicious transaction
      */
@@ -102,7 +99,7 @@ public final class DataGenerator {
     }
     
     /**
-     * Generates a series of rapid transactions for pattern detection.
+     * Generates a series of rapid transacions for pattern detection.
      *
      * @param accountId the account ID
      * @param count number of transactions
@@ -154,17 +151,18 @@ public final class DataGenerator {
         
         return Math.round(baseAmount * 100.0) / 100.0;
     }
-    
+
     private static LocalDateTime generateRandomTimestamp() {
-        int daysAgo = RANDOM.nextInt(30);
+        int daysAgo = RANDOM.nextInt(30) + 1;
         int hour = RANDOM.nextInt(24);
         int minute = RANDOM.nextInt(60);
-        
+
         return LocalDateTime.now()
-            .minusDays(daysAgo)
-            .withHour(hour)
-            .withMinute(minute)
-            .withSecond(RANDOM.nextInt(60));
+                .minusDays(daysAgo)
+                .minusHours(1)
+                .withHour(hour)
+                .withMinute(minute)
+                .withSecond(RANDOM.nextInt(60));
     }
     
     private static String generateDescription(TransactionType type, String merchant) {

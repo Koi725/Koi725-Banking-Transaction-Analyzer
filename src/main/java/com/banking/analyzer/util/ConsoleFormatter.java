@@ -9,7 +9,6 @@ import java.util.List;
 
 /**
  * Utility class for formatting console output.
- * Provides professional, readable console displays.
  */
 public final class ConsoleFormatter {
     
@@ -20,12 +19,10 @@ public final class ConsoleFormatter {
     
     // Private constructor prevents instantiation
     private ConsoleFormatter() {
-        throw new UnsupportedOperationException("Utility class cannot be instantiated");
+        throw new UnsupportedOperationException("Utility class cannt be instantiated");
     }
     
     /**
-     * Prints a formatted header.
-     *
      * @param title the header title
      */
     public static void printHeader(String title) {
@@ -35,8 +32,6 @@ public final class ConsoleFormatter {
     }
     
     /**
-     * Prints a section header.
-     *
      * @param title the section title
      */
     public static void printSectionHeader(String title) {
@@ -89,8 +84,6 @@ public final class ConsoleFormatter {
     }
     
     /**
-     * Prints account details.
-     *
      * @param account the account to display
      */
     public static void printAccount(Account account) {
@@ -161,8 +154,6 @@ public final class ConsoleFormatter {
     }
     
     /**
-     * Centers text within a specified width.
-     *
      * @param text the text to center
      * @param width the total width
      * @return centered text
@@ -173,8 +164,6 @@ public final class ConsoleFormatter {
     }
     
     /**
-     * Truncates text to specified length.
-     *
      * @param text the text to truncate
      * @param maxLength maximum length
      * @return truncated text
